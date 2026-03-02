@@ -2,10 +2,8 @@ import { ArrowRight, Clock, ShoppingBag, Star, Truck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-import UkraineBanner from "~/ui/components/banners/ukraine-banner";
 import { HeroBadge } from "~/ui/components/hero-badge";
 import { ProductCard } from "~/ui/components/product-card";
-import { TestimonialsSection } from "~/ui/components/testimonials/testimonials-with-marquee";
 import { Button } from "~/ui/primitives/button";
 import {
   Card,
@@ -15,32 +13,32 @@ import {
   CardTitle,
 } from "~/ui/primitives/card";
 
-import { categories, featuredProductsHomepage, testimonials } from "./mocks";
+import { categories, featuredProductsHomepage } from "./mocks";
 
 const featuresWhyChooseUs = [
   {
     description:
-      "Free shipping on all orders over $50. Fast and reliable delivery to your doorstep.",
+      "Envío gratuito en compras mayores a RD$5000. Entrega rápida y segura hasta tu puerta.",
     icon: <Truck className="h-6 w-6 text-primary" />,
-    title: "Free Shipping",
+    title: "Envío Gratis",
   },
   {
     description:
-      "Your payment information is always safe and secure with us. We use industry-leading encryption.",
+      "Tu información de pago está siempre protegida. Utilizamos tecnología de encriptación avanzada.",
     icon: <ShoppingBag className="h-6 w-6 text-primary" />,
-    title: "Secure Checkout",
+    title: "Pago Seguro",
   },
   {
     description:
-      "Our customer support team is always available to help with any questions or concerns.",
+      "Nuestro equipo de atención al cliente está disponible en todo momento para ayudarte.",
     icon: <Clock className="h-6 w-6 text-primary" />,
-    title: "24/7 Support",
+    title: "Soporte 24/7",
   },
   {
     description:
-      "We stand behind the quality of every product we sell. 30-day money-back guarantee.",
+      "Respaldamos cada producto con garantía y política de devolución de 30 días.",
     icon: <Star className="h-6 w-6 text-primary" />,
-    title: "Quality Guarantee",
+    title: "Garantía de Calidad",
   },
 ];
 
@@ -54,7 +52,6 @@ export default function HomePage() {
         `}
       >
         {/* Sample banner */}
-        <UkraineBanner />
 
         {/* Hero Section */}
         <section
@@ -95,14 +92,14 @@ export default function HomePage() {
                       lg:leading-[1.1]
                     `}
                   >
-                    Your One-Stop Shop for{" "}
+                    Potencia tu{" "}
                     <span
                       className={`
                         bg-gradient-to-r from-primary to-primary/70 bg-clip-text
                         text-transparent
                       `}
                     >
-                      Everything Tech
+                      Mundo Digital
                     </span>
                   </h1>
                   <p
@@ -111,8 +108,9 @@ export default function HomePage() {
                       md:text-xl
                     `}
                   >
-                    Discover premium products at competitive prices, with fast
-                    shipping and exceptional customer service.
+                    Descubre productos tecnológicos premium a precios
+                    competitivos, con envíos rápidos y un servicio al cliente
+                    excepcional.
                   </p>
                 </div>
                 <div
@@ -128,16 +126,16 @@ export default function HomePage() {
                       `}
                       size="lg"
                     >
-                      Shop Now <ArrowRight className="h-4 w-4" />
+                      Comprar Ahora <ArrowRight className="h-4 w-4" />
                     </Button>
                   </Link>
-                  <Link href="/showcase">
+                  <Link href="/about">
                     <Button
                       className="h-12 px-8 transition-colors duration-200"
                       size="lg"
                       variant="outline"
                     >
-                      View Showcase
+                      Sobre Nosotros
                     </Button>
                   </Link>
                 </div>
@@ -148,11 +146,11 @@ export default function HomePage() {
                 >
                   <div className="flex items-center gap-1.5">
                     <Truck className="h-5 w-5 text-primary/70" />
-                    <span>Free shipping over $50</span>
+                    <span>Envíos gratis en compras mayores a RD$5000</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <Clock className="h-5 w-5 text-primary/70" />
-                    <span>24/7 Customer Support</span>
+                    <span>Atención al Cliente 24/7</span>
                   </div>
                 </div>
               </div>
@@ -209,12 +207,12 @@ export default function HomePage() {
                   md:text-4xl
                 `}
               >
-                Shop by Category
+                Compra por Categoría
               </h2>
               <div className="mt-2 h-1 w-12 rounded-full bg-primary" />
               <p className="mt-4 max-w-2xl text-center text-muted-foreground">
-                Find the perfect device for your needs from our curated
-                collections
+                Encuentra el dispositivo perfecto según tus necesidades en
+                nuestras colecciones seleccionadas
               </p>
             </div>
             <div
@@ -288,11 +286,12 @@ export default function HomePage() {
                   md:text-4xl
                 `}
               >
-                Featured Products
+                Productos Destacados
               </h2>
               <div className="mt-2 h-1 w-12 rounded-full bg-primary" />
               <p className="mt-4 max-w-2xl text-center text-muted-foreground">
-                Check out our latest and most popular tech items
+                Descubre nuestros artículos tecnológicos más vendidos y
+                recientes
               </p>
             </div>
             <div
@@ -310,7 +309,7 @@ export default function HomePage() {
             <div className="mt-10 flex justify-center">
               <Link href="/products">
                 <Button className="group h-12 px-8" size="lg" variant="outline">
-                  View All Products
+                  Ver Todos los Productos
                   <ArrowRight
                     className={`
                       ml-2 h-4 w-4 transition-transform duration-300
@@ -345,7 +344,7 @@ export default function HomePage() {
                   md:text-4xl
                 `}
               >
-                Why Choose Us
+                ¿Por Qué Elegirnos?
               </h2>
               <div className="mt-2 h-1 w-12 rounded-full bg-primary" />
               <p
@@ -354,7 +353,8 @@ export default function HomePage() {
                   md:text-lg
                 `}
               >
-                We offer the best shopping experience with premium features
+                Ofrecemos la mejor experiencia de compra con beneficios
+                exclusivos
               </p>
             </div>
             <div
@@ -395,29 +395,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Testimonials */}
-        <section
-          className={`
-            bg-muted/50 py-12
-            md:py-16
-          `}
-        >
-          <div
-            className={`
-              container mx-auto max-w-7xl px-4
-              sm:px-6
-              lg:px-8
-            `}
-          >
-            <TestimonialsSection
-              className="py-0"
-              description="Don't just take our word for it - hear from our satisfied customers"
-              testimonials={testimonials}
-              title="What Our Customers Say"
-            />
-          </div>
-        </section>
-
         {/* CTA Section */}
         <section
           className={`
@@ -451,7 +428,7 @@ export default function HomePage() {
                     md:text-4xl
                   `}
                 >
-                  Ready to Upgrade Your Tech?
+                  ¿Listo para Actualizar tu Tecnología?
                 </h2>
                 <p
                   className={`
@@ -459,9 +436,9 @@ export default function HomePage() {
                     md:text-xl
                   `}
                 >
-                  Join thousands of satisfied customers and experience the best
-                  tech products on the market. Sign up today for exclusive deals
-                  and offers.
+                  Únete a miles de clientes satisfechos y disfruta de los
+                  mejores productos tecnológicos del mercado. Regístrate hoy y
+                  recibe ofertas exclusivas.
                 </p>
                 <div
                   className={`
@@ -474,7 +451,7 @@ export default function HomePage() {
                       className="h-12 px-8 transition-colors duration-200"
                       size="lg"
                     >
-                      Sign Up Now
+                      Crear Cuenta
                     </Button>
                   </Link>
                   <Link href="/products">
@@ -483,7 +460,7 @@ export default function HomePage() {
                       size="lg"
                       variant="outline"
                     >
-                      Browse Products
+                      Explorar Productos
                     </Button>
                   </Link>
                 </div>

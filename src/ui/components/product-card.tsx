@@ -29,6 +29,13 @@ type ProductCardProps = Omit<
   variant?: "compact" | "default";
 };
 
+const formatPrice = (price: number) =>
+  new Intl.NumberFormat("es-DO", {
+    currency: "DOP",
+    minimumFractionDigits: 0,
+    style: "currency",
+  }).format(price);
+
 export function ProductCard({
   className,
   onAddToCart,
@@ -63,7 +70,7 @@ export function ProductCard({
 
   const discount = product.originalPrice
     ? Math.round(
-        ((product.originalPrice - product.price) / product.originalPrice) * 100
+        ((product.originalPrice - product.price) / product.originalPrice) * 100,
       )
     : 0;
 
@@ -81,8 +88,8 @@ export function ProductCard({
               i < fullStars
                 ? "fill-yellow-400 text-yellow-400"
                 : i === fullStars && hasHalfStar
-                ? "fill-yellow-400/50 text-yellow-400"
-                : "stroke-muted/40 text-muted"
+                  ? "fill-yellow-400/50 text-yellow-400"
+                  : "stroke-muted/40 text-muted",
             )}
             key={`star-${product.id}-position-${i + 1}`}
           />
@@ -106,7 +113,7 @@ export function ProductCard({
               duration-200 ease-in-out
               hover:shadow-md
             `,
-            isHovered && "ring-1 ring-primary/20"
+            isHovered && "ring-1 ring-primary/20",
           )}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
@@ -117,7 +124,7 @@ export function ProductCard({
                 alt={product.name}
                 className={cn(
                   "object-cover transition-transform duration-300 ease-in-out",
-                  isHovered && "scale-105"
+                  isHovered && "scale-105",
                 )}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -139,9 +146,9 @@ export function ProductCard({
             {discount > 0 && (
               <Badge
                 className={`
-                absolute top-2 right-2 bg-destructive
-                text-destructive-foreground
-              `}
+                  absolute top-2 right-2 bg-destructive
+                  text-destructive-foreground
+                `}
               >
                 {discount}% OFF
               </Badge>
@@ -154,7 +161,7 @@ export function ProductCard({
                   absolute right-2 bottom-2 z-10 rounded-full bg-background/80
                   backdrop-blur-sm transition-opacity duration-300
                 `,
-                !isHovered && !isInWishlist && "opacity-0"
+                !isHovered && !isInWishlist && "opacity-0",
               )}
               onClick={handleAddToWishlist}
               size="icon"
@@ -166,10 +173,10 @@ export function ProductCard({
                   "h-4 w-4",
                   isInWishlist
                     ? "fill-destructive text-destructive"
-                    : "text-muted-foreground"
+                    : "text-muted-foreground",
                 )}
               />
-              <span className="sr-only">Add to wishlist</span>
+              <span className="sr-only">Agregar a favoritos</span>
             </Button>
           </div>
 
@@ -189,11 +196,11 @@ export function ProductCard({
                 <div className="mt-1.5">{renderStars()}</div>
                 <div className="mt-2 flex items-center gap-1.5">
                   <span className="font-medium text-foreground">
-                    ${product.price.toFixed(2)}
+                    {formatPrice(product.price)}
                   </span>
                   {product.originalPrice ? (
                     <span className="text-sm text-muted-foreground line-through">
-                      ${product.originalPrice.toFixed(2)}
+                      {formatPrice(product.originalPrice)}
                     </span>
                   ) : null}
                 </div>
@@ -206,7 +213,7 @@ export function ProductCard({
               <Button
                 className={cn(
                   "w-full gap-2 transition-all",
-                  isAddingToCart && "opacity-70"
+                  isAddingToCart && "opacity-70",
                 )}
                 disabled={isAddingToCart}
                 onClick={handleAddToCart}
@@ -221,7 +228,7 @@ export function ProductCard({
                 ) : (
                   <ShoppingCart className="h-4 w-4" />
                 )}
-                Add to Cart
+                Agregar al carrito
               </Button>
             </CardFooter>
           )}
@@ -231,11 +238,11 @@ export function ProductCard({
               <div className="flex w-full items-center justify-between">
                 <div className="flex items-center gap-1.5">
                   <span className="font-medium text-foreground">
-                    ${product.price.toFixed(2)}
+                    {formatPrice(product.price)}
                   </span>
                   {product.originalPrice ? (
                     <span className="text-sm text-muted-foreground line-through">
-                      ${product.originalPrice.toFixed(2)}
+                      {formatPrice(product.originalPrice)}
                     </span>
                   ) : null}
                 </div>
@@ -256,7 +263,7 @@ export function ProductCard({
                   ) : (
                     <ShoppingCart className="h-4 w-4" />
                   )}
-                  <span className="sr-only">Add to cart</span>
+                  <span className="sr-only">Agregar al carrito</span>
                 </Button>
               </div>
             </CardFooter>
@@ -270,7 +277,7 @@ export function ProductCard({
               `}
             >
               <Badge className="px-3 py-1 text-sm" variant="destructive">
-                Out of Stock
+                Agotado
               </Badge>
             </div>
           )}

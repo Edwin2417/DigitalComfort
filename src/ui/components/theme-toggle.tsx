@@ -76,7 +76,7 @@ export function ThemeToggle({ className }: { className?: string }) {
           onClick={() => setTheme("light")}
         >
           <Sun className="h-4 w-4" />
-          Light
+          Claro
         </DropdownMenuItem>
         <DropdownMenuItem
           className={cn(
@@ -86,7 +86,7 @@ export function ThemeToggle({ className }: { className?: string }) {
           onClick={() => setTheme("dark")}
         >
           <Moon className="h-4 w-4" />
-          Dark
+          Oscuro
         </DropdownMenuItem>
         <DropdownMenuItem
           className={cn(
@@ -110,7 +110,7 @@ export function ThemeToggle({ className }: { className?: string }) {
               fillRule="evenodd"
             />
           </svg>
-          System
+          Sistema
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

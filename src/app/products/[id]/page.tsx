@@ -32,8 +32,9 @@ interface Product {
 /*                         Helpers (shared, memo-safe)                        */
 /* -------------------------------------------------------------------------- */
 
-const CURRENCY_FORMATTER = new Intl.NumberFormat("en-US", {
-  currency: "USD",
+const CURRENCY_FORMATTER = new Intl.NumberFormat("es-DO", {
+  currency: "DOP",
+  minimumFractionDigits: 0,
   style: "currency",
 });
 
@@ -55,185 +56,151 @@ const products: Product[] = [
   {
     category: "Audio",
     description:
-      "Experience crystal-clear sound with our premium wireless headphones. Featuring active noise cancellation, 30-hour battery life, and comfortable over-ear design for all-day listening comfort.",
+      "Disfruta sonido envolvente con estos audífonos inalámbricos SONY. Ideales para música, trabajo y llamadas con excelente calidad y comodidad.",
     features: [
-      "Active noise cancellation",
-      "30-hour battery life",
-      "Bluetooth 5.2 connectivity",
-      "Comfortable memory foam ear cushions",
-      "Quick charge - 5 minutes for 4 hours of playback",
-      "Built-in microphone for calls",
+      "Conectividad Bluetooth",
+      "Cancelación de ruido",
+      "Batería de larga duración",
+      "Micrófono integrado",
+      "Carga rápida",
     ],
     id: "1",
     image:
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=800&auto=format&fit=crop&q=60",
     inStock: true,
-    name: "Premium Wireless Headphones",
-    originalPrice: 249.99,
-    price: 199.99,
+    name: "Audífonos Inalámbricos SONY",
+    originalPrice: 14500,
+    price: 11500,
     rating: 4.5,
     specs: {
-      batteryLife: "30 hours",
-      brand: "AudioMax",
-      connectivity: "Bluetooth 5.2, 3.5mm jack",
-      model: "WH-1000XM5",
-      warranty: "2 years",
-      weight: "250g",
+      bateria: "Hasta 30 horas",
+      conectividad: "Bluetooth",
+      garantia: "1 año",
+      marca: "Sony",
     },
   },
   {
-    category: "Wearables",
+    category: "Relojes Inteligentes",
     description:
-      "Stay connected and track your fitness goals with our advanced smartwatch. Features health monitoring, GPS tracking, and a beautiful always-on display.",
+      "Reloj inteligente Serie 5 con monitoreo de salud, notificaciones y diseño moderno resistente al agua.",
     features: [
-      "Health monitoring (heart rate, ECG, sleep)",
-      "Water resistant up to 50m",
-      "GPS tracking",
-      "7-day battery life",
-      "Always-on retina display",
-      "Customizable watch faces",
+      "Monitoreo cardíaco",
+      "Pantalla táctil HD",
+      "Resistente al agua",
+      "GPS integrado",
+      "Batería de 7 días",
     ],
     id: "2",
     image:
-      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop&q=60",
     inStock: true,
-    name: "Smart Watch Series 5",
-    originalPrice: 349.99,
-    price: 299.99,
+    name: "Reloj Inteligente Serie 5",
+    originalPrice: 20500,
+    price: 17900,
     rating: 4.2,
     specs: {
-      batteryLife: "7 days",
-      brand: "TechFit",
-      compatibility: "iOS, Android",
-      display: '1.5" AMOLED',
-      model: "Watch Pro 5",
-      warranty: "1 year",
-      waterResistance: "5 ATM",
+      bateria: "7 días",
+      compatibilidad: "Android / iOS",
+      garantia: "1 año",
+      pantalla: "1.5 pulgadas",
     },
   },
   {
-    category: "Photography",
+    category: "Fotografía",
     description:
-      "Capture stunning photos and videos with our professional camera kit. Includes a high-resolution sensor, 4K video recording, and a versatile lens kit for any shooting situation.",
+      "Kit profesional de cámara ideal para fotógrafos avanzados y creadores de contenido.",
     features: [
-      "24.2MP full-frame sensor",
-      "4K video recording at 60fps",
-      "5-axis image stabilization",
-      "Weather-sealed body",
-      "Dual SD card slots",
-      "Includes 24-70mm f/2.8 lens",
+      "Sensor 24MP",
+      "Grabación 4K",
+      "Estabilización avanzada",
+      "Incluye lente profesional",
     ],
     id: "3",
     image:
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800&auto=format&fit=crop&q=60",
     inStock: false,
-    name: "Professional Camera Kit",
-    originalPrice: 1499.99,
-    price: 1299.99,
+    name: "Kit de Cámara Profesional",
+    originalPrice: 87000,
+    price: 79000,
     rating: 4.8,
     specs: {
-      brand: "OptiPro",
-      iso: "100-51,200 (expandable to 204,800)",
-      model: "X-1000",
-      resolution: "24.2MP",
-      sensorType: "Full-frame CMOS",
-      shutter: "1/8000 to 30 sec",
-      warranty: "2 years",
+      garantia: "2 años",
+      resolucion: "24MP",
+      video: "4K",
     },
   },
   {
-    category: "Furniture",
+    category: "Accesorios",
     description:
-      "Work in comfort with our ergonomic office chair designed for all-day support. Features adjustable height, lumbar support, and breathable mesh back.",
+      "Silla gamer ergonómica con soporte lumbar ideal para largas horas de trabajo o juego.",
     features: [
-      "Adjustable height and armrests",
-      "Breathable mesh back",
-      "Lumbar support",
-      "360° swivel",
-      "Heavy-duty base with smooth-rolling casters",
-      "Weight capacity: 300 lbs",
+      "Soporte lumbar",
+      "Altura ajustable",
+      "Base resistente",
+      "Diseño ergonómico",
     ],
     id: "4",
     image:
-      "https://images.unsplash.com/photo-1506377295352-e3154d43ea9e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1770195483917-b3bb444b7a29?w=800&auto=format&fit=crop&q=60",
     inStock: true,
-    name: "Ergonomic Office Chair",
-    originalPrice: 299.99,
-    price: 249.99,
+    name: "Silla Gamer Ergonómica",
+    originalPrice: 18000,
+    price: 14900,
     rating: 4.6,
     specs: {
-      adjustableHeight: "16-20 inches",
-      brand: "ErgoComfort",
-      dimensions: '26"W x 26"D x 38-42"H',
-      material: "Mesh back, fabric seat",
-      maxWeight: "300 lbs",
-      model: "Executive Pro",
-      warranty: "5 years",
+      ajuste: "Altura regulable",
+      garantia: "6 meses",
+      material: "Cuero sintético",
     },
   },
   {
-    category: "Electronics",
+    category: "Celulares",
     description:
-      "The ultimate smartphone experience with a stunning display, powerful camera system, and all-day battery life.",
+      "Samsung S21+ con pantalla AMOLED, cámara avanzada y excelente rendimiento.",
     features: [
-      '6.7" Super Retina XDR display',
-      "Triple camera system (12MP wide, ultra-wide, telephoto)",
-      "Face ID for secure authentication",
-      "A16 Bionic chip",
-      "Up to 1TB storage",
-      "All-day battery life",
+      'Pantalla AMOLED 6.7"',
+      "Cámara triple",
+      "Carga rápida",
+      "Almacenamiento amplio",
     ],
     id: "5",
     image:
-      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1560617544-b4f287789e24?w=800&auto=format&fit=crop&q=60",
     inStock: true,
-    name: "Smartphone Pro Max",
-    originalPrice: 1099.99,
-    price: 999.99,
+    name: "Samsung S21+",
+    originalPrice: 17000,
+    price: 14900,
     rating: 4.9,
     specs: {
-      battery: "4,352mAh",
-      brand: "TechPro",
-      camera: "12MP triple camera system",
-      display: '6.7" Super Retina XDR',
-      model: "Galaxy Pro Max",
-      os: "iOS 16",
-      processor: "A16 Bionic chip",
-      storage: "128GB/256GB/512GB/1TB",
-      warranty: "1 year",
+      almacenamiento: "128GB",
+      bateria: "4500mAh",
+      garantia: "1 año",
+      pantalla: "6.7 pulgadas",
     },
   },
   {
-    category: "Electronics",
+    category: "Televisores",
     description:
-      "Transform your home entertainment with our Ultra HD Smart TV featuring vibrant colors, immersive sound, and smart connectivity.",
+      'Smart TV 55" Ultra HD con imagen 4K y conectividad inteligente para entretenimiento total.',
     features: [
-      '55" 4K Ultra HD display',
-      "Dolby Vision HDR",
-      "Dolby Atmos sound",
-      "Built-in voice assistant",
-      "Smart home integration",
-      "Multiple HDMI and USB ports",
+      "Resolución 4K",
+      "HDR",
+      "WiFi integrado",
+      "Múltiples puertos HDMI",
     ],
     id: "6",
     image:
-      "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1567690187548-f07b1d7bf5a9?w=800&auto=format&fit=crop&q=60",
     inStock: true,
-    name: 'Ultra HD Smart TV 55"',
-    originalPrice: 899.99,
-    price: 799.99,
+    name: 'Smart TV 55" Ultra HD',
+    originalPrice: 52000,
+    price: 46900,
     rating: 4.7,
     specs: {
-      audio: "40W Dolby Atmos",
-      brand: "VisionPro",
-      connectivity: "HDMI x4, USB x3, Wi-Fi, Bluetooth",
-      display: '55" 4K Ultra HD LED',
-      hdr: "Dolby Vision, HDR10+",
-      model: "X55-4K",
-      refreshRate: "120Hz",
-      resolution: "3840 x 2160",
-      smartFeatures: "Voice control, App store",
-      warranty: "2 years",
+      conectividad: "WiFi / HDMI",
+      garantia: "2 años",
+      pulgadas: '55"',
+      resolucion: "3840 x 2160",
     },
   },
 ];
@@ -301,12 +268,10 @@ export default function ProductDetailPage() {
               md:px-6
             `}
           >
-            <h1 className="text-3xl font-bold">Product Not Found</h1>
-            <p className="mt-4">
-              The product you&apos;re looking for doesn&apos;t exist.
-            </p>
+            <h1 className="text-3xl font-bold">Producto no encontrado</h1>
+            <p className="mt-4">El producto que estás buscando no existe.</p>
             <Button className="mt-6" onClick={() => router.push("/products")}>
-              Back to Products
+              Volver a productos
             </Button>
           </div>
         </main>
@@ -326,12 +291,12 @@ export default function ProductDetailPage() {
         >
           {/* Back link */}
           <Button
-            aria-label="Back to products"
+            aria-label="← Volver a productos"
             className="mb-6"
             onClick={() => router.push("/products")}
             variant="ghost"
           >
-            ← Back to Products
+            ← Volver a productos
           </Button>
 
           {/* Main grid */}
@@ -425,11 +390,11 @@ export default function ProductDetailPage() {
               {/* Stock */}
               <div aria-atomic="true" aria-live="polite" className="mb-6">
                 {product.inStock ? (
-                  <p className="text-sm font-medium text-green-600">In Stock</p>
-                ) : (
-                  <p className="text-sm font-medium text-red-500">
-                    Out of Stock
+                  <p className="text-sm font-medium text-green-600">
+                    Disponible
                   </p>
+                ) : (
+                  <p className="text-sm font-medium text-red-500">Agotado</p>
                 )}
               </div>
 
@@ -473,7 +438,7 @@ export default function ProductDetailPage() {
                   onClick={handleAddToCart}
                 >
                   <ShoppingCart className="mr-2 h-4 w-4" />
-                  {isAdding ? "Adding…" : "Add to Cart"}
+                  {isAdding ? "Agregando…" : "Agregar al carrito"}
                 </Button>
               </div>
             </div>
@@ -490,7 +455,7 @@ export default function ProductDetailPage() {
           >
             {/* Features */}
             <section>
-              <h2 className="mb-4 text-2xl font-bold">Features</h2>
+              <h2 className="mb-4 text-2xl font-bold">Características</h2>
               <ul className="space-y-2">
                 {product.features.map((feature) => (
                   <li
@@ -506,7 +471,7 @@ export default function ProductDetailPage() {
 
             {/* Specifications */}
             <section>
-              <h2 className="mb-4 text-2xl font-bold">Specifications</h2>
+              <h2 className="mb-4 text-2xl font-bold">Especificaciones</h2>
               <div className="space-y-2">
                 {Object.entries(product.specs).map(([key, value]) => (
                   <div

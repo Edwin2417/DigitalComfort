@@ -50,17 +50,17 @@ export function NotificationCenter({
 
   const handleMarkAsRead = useCallback(
     (id: string) => onMarkAsRead?.(id),
-    [onMarkAsRead]
+    [onMarkAsRead],
   );
 
   const handleMarkAllAsRead = useCallback(
     () => onMarkAllAsRead?.(),
-    [onMarkAllAsRead]
+    [onMarkAllAsRead],
   );
 
   const handleDismiss = useCallback(
     (id: string) => onDismiss?.(id),
-    [onDismiss]
+    [onDismiss],
   );
 
   const handleClearAll = useCallback(() => onClearAll?.(), [onClearAll]);
@@ -91,7 +91,7 @@ export function NotificationCenter({
 
         <DropdownMenuContent align="end" className="w-80">
           <DropdownMenuLabel className="flex items-center justify-between">
-            <span>Notifications</span>
+            <span>Notificaciones</span>
             {unreadCount > 0 && (
               <Button
                 className="h-auto p-0 text-xs font-normal text-primary"
@@ -99,7 +99,7 @@ export function NotificationCenter({
                 size="sm"
                 variant="ghost"
               >
-                Mark all as read
+                Marcar todas como leídas
               </Button>
             )}
           </DropdownMenuLabel>
@@ -122,7 +122,7 @@ export function NotificationCenter({
                   size="sm"
                   variant="outline"
                 >
-                  Clear all notifications
+                  Borrar todas las notificaciones
                 </Button>
               </CardFooter>
             </>

@@ -48,7 +48,7 @@ export function SignUpPageClient() {
         router.push("/auth/sign-in?registered=true");
       })
       .catch((err: unknown) => {
-        setError("Registration failed. Please try again.");
+        setError("Error al registrarse. Intenta nuevamente.");
         console.error(err);
       })
       .finally(() => {
@@ -61,7 +61,7 @@ export function SignUpPageClient() {
     try {
       void signIn.social({ provider: "github" });
     } catch (err) {
-      setError("Failed to sign up with GitHub");
+      setError("Error al registrarse con GitHub");
       console.error(err);
       setLoading(false);
     }
@@ -72,7 +72,7 @@ export function SignUpPageClient() {
     try {
       void signIn.social({ provider: "google" });
     } catch (err) {
-      setError("Failed to sign up with Google");
+      setError("Error al registrarse con Google");
       console.error(err);
       setLoading(false);
     }
@@ -127,9 +127,9 @@ export function SignUpPageClient() {
               md:text-left
             `}
           >
-            <h2 className="text-3xl font-bold">Create Account</h2>
+            <h2 className="text-3xl font-bold">Crear Cuenta</h2>
             <p className="text-sm text-muted-foreground">
-              Enter your details to create your account
+              Ingresa tus datos para crear tu cuenta
             </p>
           </div>
 
@@ -137,31 +137,31 @@ export function SignUpPageClient() {
             <CardContent className="pt-2">
               <form className="space-y-4" onSubmit={handleSubmit}>
                 <div className="grid gap-2">
-                  <Label htmlFor="name">Full Name</Label>
+                  <Label htmlFor="name">Nombre completo</Label>
                   <Input
                     id="name"
                     name="name"
                     onChange={handleChange}
-                    placeholder="John Doe"
+                    placeholder="Tu nombre completo"
                     required
                     type="text"
                     value={formData.name}
                   />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="email">Email</Label>
+                  <Label htmlFor="email">Correo electrónico</Label>
                   <Input
                     id="email"
                     name="email"
                     onChange={handleChange}
-                    placeholder="name@example.com"
+                    placeholder="correo@ejemplo.com"
                     required
                     type="email"
                     value={formData.email}
                   />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="password">Password</Label>
+                  <Label htmlFor="password">Contraseña</Label>
                   <Input
                     id="password"
                     name="password"
@@ -177,7 +177,7 @@ export function SignUpPageClient() {
                   </div>
                 )}
                 <Button className="w-full" disabled={loading} type="submit">
-                  {loading ? "Creating account..." : "Create account"}
+                  {loading ? "Creando cuenta..." : "Crear cuenta"}
                 </Button>
               </form>
               <div className="relative mt-6">
@@ -186,7 +186,7 @@ export function SignUpPageClient() {
                 </div>
                 <div className="relative flex justify-center text-xs uppercase">
                   <span className="bg-background px-2 text-muted-foreground">
-                    Or continue with
+                    O continuar con
                   </span>
                 </div>
               </div>
@@ -211,7 +211,7 @@ export function SignUpPageClient() {
                 </Button>
               </div>
               <div className="mt-6 text-center text-sm text-muted-foreground">
-                Already have an account?{" "}
+                ¿Ya tienes una cuenta?{" "}
                 <Link
                   className={`
                     text-primary underline-offset-4
@@ -219,7 +219,7 @@ export function SignUpPageClient() {
                   `}
                   href="/auth/sign-in"
                 >
-                  Sign in
+                  Iniciar sesión
                 </Link>
               </div>
             </CardContent>

@@ -50,6 +50,13 @@ export function CartClient({ className, mockCart }: CartProps) {
     setIsMounted(true);
   }, []);
 
+  const formatDOP = (amount: number) => {
+    return new Intl.NumberFormat("es-DO", {
+      currency: "DOP",
+      style: "currency",
+    }).format(amount);
+  };
+
   const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
   const subtotal = cartItems.reduce(
     (acc, item) => acc + item.price * item.quantity,
@@ -75,7 +82,7 @@ export function CartClient({ className, mockCart }: CartProps) {
 
   const CartTrigger = (
     <Button
-      aria-label="Open cart"
+      aria-label="Abrir carrito"
       className="relative h-9 w-9 rounded-full"
       size="icon"
       variant="outline"
@@ -99,11 +106,11 @@ export function CartClient({ className, mockCart }: CartProps) {
       <div className="flex flex-col">
         <div className="flex items-center justify-between border-b px-6 py-4">
           <div>
-            <div className="text-xl font-semibold">Your Cart</div>
+            <div className="text-xl font-semibold">Tu Carrito</div>
             <div className="text-sm text-muted-foreground">
               {totalItems === 0
-                ? "Your cart is empty"
-                : `You have ${totalItems} item${totalItems !== 1 ? "s" : ""} in your cart`}
+                ? "Tu carrito está vacío"
+                : `Tienes ${totalItems} producto${totalItems !== 1 ? "s" : ""} en tu carrito`}
             </div>
           </div>
           {isDesktop && (
@@ -132,20 +139,22 @@ export function CartClient({ className, mockCart }: CartProps) {
                 >
                   <ShoppingCart className="h-10 w-10 text-muted-foreground" />
                 </div>
-                <h3 className="mb-2 text-lg font-medium">Your cart is empty</h3>
+                <h3 className="mb-2 text-lg font-medium">
+                  Tu carrito está vacío.
+                </h3>
                 <p className="mb-6 text-center text-sm text-muted-foreground">
-                  Looks like you haven't added anything to your cart yet.
+                  Todavía no has agregado productos a tu carrito.
                 </p>
                 {isDesktop ? (
                   <SheetClose asChild>
                     <Link href="/products">
-                      <Button>Browse Products</Button>
+                      <Button>Ver Productos</Button>
                     </Link>
                   </SheetClose>
                 ) : (
                   <DrawerClose asChild>
                     <Link href="/products">
-                      <Button>Browse Products</Button>
+                      <Button>Ver Productos</Button>
                     </Link>
                   </DrawerClose>
                 )}
@@ -197,7 +206,7 @@ export function CartClient({ className, mockCart }: CartProps) {
                             type="button"
                           >
                             <X className="h-4 w-4" />
-                            <span className="sr-only">Remove item</span>
+                            <span className="sr-only">Eliminar producto</span>
                           </button>
                         </div>
                         <p className="text-xs text-muted-foreground">
@@ -220,7 +229,7 @@ export function CartClient({ className, mockCart }: CartProps) {
                             type="button"
                           >
                             <Minus className="h-3 w-3" />
-                            <span className="sr-only">Decrease quantity</span>
+                            <span className="sr-only">Disminuir cantidad</span>
                           </button>
                           <span
                             className={`
@@ -243,11 +252,11 @@ export function CartClient({ className, mockCart }: CartProps) {
                             type="button"
                           >
                             <Plus className="h-3 w-3" />
-                            <span className="sr-only">Increase quantity</span>
+                            <span className="sr-only">Aumentar cantidad</span>
                           </button>
                         </div>
                         <div className="text-sm font-medium">
-                          ${(item.price * item.quantity).toFixed(2)}
+                          {formatDOP(item.price * item.quantity)}
                         </div>
                       </div>
                     </div>
@@ -263,30 +272,32 @@ export function CartClient({ className, mockCart }: CartProps) {
             <div className="space-y-3">
               <div className="flex items-center justify-between text-sm">
                 <span className="text-muted-foreground">Subtotal</span>
-                <span className="font-medium">${subtotal.toFixed(2)}</span>
+                <span className="font-medium">{formatDOP(subtotal)}</span>
               </div>
               <div className="flex items-center justify-between text-sm">
-                <span className="text-muted-foreground">Shipping</span>
-                <span className="font-medium">Calculated at checkout</span>
+                <span className="text-muted-foreground">Envío</span>
+                <span className="font-medium">
+                  Calculado al finalizar la compra
+                </span>
               </div>
               <Separator />
               <div className="flex items-center justify-between">
                 <span className="text-base font-semibold">Total</span>
                 <span className="text-base font-semibold">
-                  ${subtotal.toFixed(2)}
+                  {formatDOP(subtotal)}
                 </span>
               </div>
               <Button className="w-full" size="lg">
-                Checkout
+                Finalizar Compra
               </Button>
               <div className="flex items-center justify-between">
                 {isDesktop ? (
                   <SheetClose asChild>
-                    <Button variant="outline">Continue Shopping</Button>
+                    <Button variant="outline">Seguir Comprando</Button>
                   </SheetClose>
                 ) : (
                   <DrawerClose asChild>
-                    <Button variant="outline">Continue Shopping</Button>
+                    <Button variant="outline">Seguir Comprando</Button>
                   </DrawerClose>
                 )}
                 <Button
@@ -294,7 +305,7 @@ export function CartClient({ className, mockCart }: CartProps) {
                   onClick={handleClearCart}
                   variant="outline"
                 >
-                  Clear Cart
+                  Vaciar Carrito
                 </Button>
               </div>
             </div>
@@ -308,7 +319,7 @@ export function CartClient({ className, mockCart }: CartProps) {
     return (
       <div className={cn("relative", className)}>
         <Button
-          aria-label="Open cart"
+          aria-label="Abrir carrito"
           className="relative h-9 w-9 rounded-full"
           size="icon"
           variant="outline"
@@ -336,7 +347,7 @@ export function CartClient({ className, mockCart }: CartProps) {
           <SheetTrigger asChild>{CartTrigger}</SheetTrigger>
           <SheetContent className="flex w-[400px] flex-col p-0">
             <SheetHeader>
-              <SheetTitle>Shopping Cart</SheetTitle>
+              <SheetTitle>Carrito de Compras</SheetTitle>
             </SheetHeader>
             {CartContent}
           </SheetContent>

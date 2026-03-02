@@ -28,7 +28,8 @@ export function Header({ showAuth = true }: HeaderProps) {
 
   const mainNavigation = [
     { href: "/", name: "Home" },
-    { href: "/products", name: "Products" },
+    { href: "/products", name: "Productos" },
+    { href: "/about", name: "Sobre Nosotros" },
   ];
 
   const dashboardNavigation = [
@@ -149,11 +150,11 @@ export function Header({ showAuth = true }: HeaderProps) {
                   <div className="flex items-center gap-2">
                     <Link href="/auth/sign-in">
                       <Button size="sm" variant="ghost">
-                        Log in
+                        Inicie Sesión
                       </Button>
                     </Link>
                     <Link href="/auth/sign-up">
-                      <Button size="sm">Sign up</Button>
+                      <Button size="sm">Registrate</Button>
                     </Link>
                   </div>
                 )}
@@ -230,7 +231,7 @@ export function Header({ showAuth = true }: HeaderProps) {
                 href="/auth/sign-in"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Log in
+                Inicie Sesión
               </Link>
               <Link
                 className={`
@@ -241,7 +242,7 @@ export function Header({ showAuth = true }: HeaderProps) {
                 href="/auth/sign-up"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Sign up
+                Registrate
               </Link>
             </div>
           )}

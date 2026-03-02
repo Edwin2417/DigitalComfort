@@ -4,43 +4,45 @@ import type { Notification } from "./notification-center";
 
 export const mockNotifications: Notification[] = [
   {
-    description: "Thank you for signing up. Explore our features.",
+    description:
+      "Gracias por registrarte. Descubre los mejores gadgets y ofertas exclusivas.",
     id: "1",
     read: false,
-    timestamp: new Date(Date.now() - 60 * 1000), // 1 minute ago
-    title: `Welcome to ${SEO_CONFIG.name}!`,
+    timestamp: new Date(Date.now() - 60 * 1000),
+    title: `¡Bienvenido a ${SEO_CONFIG.name}!`,
     type: "success",
   },
   {
-    description: "There was an issue with your payment method.",
+    description: "Hubo un problema con tu método de pago. Intenta nuevamente.",
     id: "2",
     read: false,
-    timestamp: new Date(Date.now() - 5 * 60 * 1000), // 5 minutes ago
-    title: "Payment Failed",
+    timestamp: new Date(Date.now() - 5 * 60 * 1000),
+    title: "Pago rechazado",
     type: "error",
   },
   {
-    description: "Your order #1234 has shipped.",
+    description: "Tu pedido #1234 fue enviado y está en camino.",
     id: "3",
     read: false,
-    timestamp: new Date(Date.now() - 3600 * 1000), // 1 hour ago
-    title: "Order Shipped",
+    timestamp: new Date(Date.now() - 3600 * 1000),
+    title: "Pedido enviado",
     type: "info",
   },
   {
-    description: "The item on your wishlist is now back in stock!",
+    description: "Los audífonos inalámbricos que querías ya están disponibles.",
     id: "4",
     read: true,
-    timestamp: new Date(Date.now() - 3600 * 1000), // 1 hour ago
-    title: "New Product Available",
+    timestamp: new Date(Date.now() - 3600 * 1000),
+    title: "Producto nuevamente disponible",
     type: "info",
   },
   {
-    description: "Get 10% off your next purchase.",
+    description:
+      "Aprovecha 10% de descuento en relojes inteligentes por tiempo limitado.",
     id: "5",
     read: true,
-    timestamp: new Date(Date.now() - 2 * 86400 * 1000), // 2 days ago
-    title: "Discount Available!",
+    timestamp: new Date(Date.now() - 2 * 86400 * 1000),
+    title: "¡Oferta especial!",
     type: "warning",
   },
 ];

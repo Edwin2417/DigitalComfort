@@ -33,8 +33,8 @@ export function Footer({ className }: { className?: string }) {
               </span>
             </Link>
             <p className="text-sm text-muted-foreground">
-              Your one-stop shop for everything tech. Premium products at
-              competitive prices.
+              Tu tienda integral de tecnología. Productos premium a precios
+              competitivos.
             </p>
             <div className="flex space-x-4">
               <Button
@@ -80,7 +80,7 @@ export function Footer({ className }: { className?: string }) {
             </div>
           </div>
           <div>
-            <h3 className="mb-4 text-sm font-semibold">Shop</h3>
+            <h3 className="mb-4 text-sm font-semibold">Tienda</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
@@ -90,7 +90,7 @@ export function Footer({ className }: { className?: string }) {
                   `}
                   href="/products"
                 >
-                  All Products
+                  Todos los Productos
                 </Link>
               </li>
               <li>
@@ -112,7 +112,7 @@ export function Footer({ className }: { className?: string }) {
                   `}
                   href="/products?category=wearables"
                 >
-                  Wearables
+                  Dispositivos Inteligentes
                 </Link>
               </li>
               <li>
@@ -123,7 +123,7 @@ export function Footer({ className }: { className?: string }) {
                   `}
                   href="/products?category=smartphones"
                 >
-                  Smartphones
+                  Celulares
                 </Link>
               </li>
               <li>
@@ -140,7 +140,7 @@ export function Footer({ className }: { className?: string }) {
             </ul>
           </div>
           <div>
-            <h3 className="mb-4 text-sm font-semibold">Company</h3>
+            <h3 className="mb-4 text-sm font-semibold">Empresa</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
@@ -150,7 +150,7 @@ export function Footer({ className }: { className?: string }) {
                   `}
                   href="/about"
                 >
-                  About Us
+                  Sobre Nosotros
                 </Link>
               </li>
               <li>
@@ -161,7 +161,7 @@ export function Footer({ className }: { className?: string }) {
                   `}
                   href="/careers"
                 >
-                  Careers
+                  Trabaja con Nosotros
                 </Link>
               </li>
               <li>
@@ -183,7 +183,7 @@ export function Footer({ className }: { className?: string }) {
                   `}
                   href="/press"
                 >
-                  Press
+                  Prensa
                 </Link>
               </li>
               <li>
@@ -194,13 +194,13 @@ export function Footer({ className }: { className?: string }) {
                   `}
                   href="/contact"
                 >
-                  Contact
+                  Contacto
                 </Link>
               </li>
             </ul>
           </div>
           <div>
-            <h3 className="mb-4 text-sm font-semibold">Support</h3>
+            <h3 className="mb-4 text-sm font-semibold">Soporte</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
@@ -210,7 +210,7 @@ export function Footer({ className }: { className?: string }) {
                   `}
                   href="/help"
                 >
-                  Help Center
+                  Centro de Ayuda
                 </Link>
               </li>
               <li>
@@ -221,7 +221,7 @@ export function Footer({ className }: { className?: string }) {
                   `}
                   href="/shipping"
                 >
-                  Shipping & Returns
+                  Envíos y Devoluciones
                 </Link>
               </li>
               <li>
@@ -232,7 +232,7 @@ export function Footer({ className }: { className?: string }) {
                   `}
                   href="/warranty"
                 >
-                  Warranty
+                  Garantía
                 </Link>
               </li>
               <li>
@@ -243,7 +243,7 @@ export function Footer({ className }: { className?: string }) {
                   `}
                   href="/privacy"
                 >
-                  Privacy Policy
+                  Política de Privacidad
                 </Link>
               </li>
               <li>
@@ -254,7 +254,7 @@ export function Footer({ className }: { className?: string }) {
                   `}
                   href="/terms"
                 >
-                  Terms of Service
+                  Términos del Servicio
                 </Link>
               </li>
             </ul>
@@ -268,8 +268,8 @@ export function Footer({ className }: { className?: string }) {
             `}
           >
             <p className="text-sm text-muted-foreground">
-              &copy; {new Date().getFullYear()} {SEO_CONFIG.name}. All rights
-              reserved.
+              &copy; {new Date().getFullYear()} {SEO_CONFIG.name}. Todos los
+              derechos reservados.
             </p>
             <div
               className={
@@ -277,16 +277,16 @@ export function Footer({ className }: { className?: string }) {
               }
             >
               <Link className="hover:text-foreground" href="/privacy">
-                Privacy
+                Privacidad
               </Link>
               <Link className="hover:text-foreground" href="/terms">
-                Terms
+                Términos
               </Link>
               <Link className="hover:text-foreground" href="/cookies">
                 Cookies
               </Link>
               <Link className="hover:text-foreground" href="/sitemap">
-                Sitemap
+                Mapa del Sitio
               </Link>
             </div>
           </div>

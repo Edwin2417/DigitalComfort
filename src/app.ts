@@ -1,8 +1,8 @@
 export const SEO_CONFIG = {
   description:
     "Relivator is a robust ecommerce template built with next.js and other modern technologies. It's designed for developers who want a fast, modern, and scalable foundation without reinventing the backend.",
-  fullName: "Relivator Next.js Template",
-  name: "Relivator",
+  fullName: "DigitalComfort",
+  name: "DigitalComfort",
   slogan: "Store which makes you happy.",
 };
 

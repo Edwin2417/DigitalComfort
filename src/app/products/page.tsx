@@ -42,66 +42,66 @@ const products: Product[] = [
     category: "Audio",
     id: "1",
     image:
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
     inStock: true,
-    name: "Premium Wireless Headphones",
-    originalPrice: 249.99,
-    price: 199.99,
+    name: "Audífonos Inalámbricos SONY",
+    originalPrice: 14500,
+    price: 11500,
     rating: 4.5,
   },
   {
-    category: "Wearables",
+    category: "Relojes Inteligentes",
     id: "2",
     image:
       "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
     inStock: true,
-    name: "Smart Watch Series 5",
-    originalPrice: 349.99,
-    price: 299.99,
+    name: "Reloj Inteligente Serie 5",
+    originalPrice: 20500,
+    price: 17900,
     rating: 4.2,
   },
   {
-    category: "Photography",
+    category: "Fotografía",
     id: "3",
     image:
       "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
     inStock: false,
-    name: "Professional Camera Kit",
-    originalPrice: 1499.99,
-    price: 1299.99,
+    name: "Kit de Cámara Profesional",
+    originalPrice: 87000,
+    price: 79000,
     rating: 4.8,
   },
   {
-    category: "Furniture",
+    category: "Accesorios",
     id: "4",
     image:
-      "https://images.unsplash.com/photo-1506377295352-e3154d43ea9e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1770195483917-b3bb444b7a29?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
     inStock: true,
-    name: "Ergonomic Office Chair",
-    originalPrice: 299.99,
-    price: 249.99,
+    name: "Silla Gamer Ergonómica",
+    originalPrice: 18000,
+    price: 14900,
     rating: 4.6,
   },
   {
-    category: "Electronics",
+    category: "Celulares",
     id: "5",
     image:
-      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1560617544-b4f287789e24?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
     inStock: true,
-    name: "Smartphone Pro Max",
-    originalPrice: 1099.99,
-    price: 999.99,
+    name: "Samsung S21 +",
+    originalPrice: 17000,
+    price: 14900,
     rating: 4.9,
   },
   {
-    category: "Electronics",
+    category: "Televisores",
     id: "6",
     image:
-      "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1567690187548-f07b1d7bf5a9?q=80&w=736&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
     inStock: true,
-    name: 'Ultra HD Smart TV 55"',
-    originalPrice: 899.99,
-    price: 799.99,
+    name: 'Smart TV 55" Ultra HD',
+    originalPrice: 52000,
+    price: 46900,
     rating: 4.7,
   },
 ];
@@ -116,17 +116,17 @@ export default function ProductsPage() {
   /* ----------------------- Categories (derived) ------------------------- */
   const categories: Category[] = React.useMemo(() => {
     const dynamic = Array.from(new Set(products.map((p) => p.category))).sort();
-    return ["All", ...dynamic];
+    return ["Todos", ...dynamic];
   }, []);
 
   /* ----------------------------- State ---------------------------------- */
   const [selectedCategory, setSelectedCategory] =
-    React.useState<Category>("All");
+    React.useState<Category>("Todos");
 
   /* --------------------- Filtered products (memo) ----------------------- */
   const filteredProducts = React.useMemo(
     () =>
-      selectedCategory === "All"
+      selectedCategory === "Todos"
         ? products
         : products.filter((p) => p.category === selectedCategory),
     [selectedCategory],
@@ -175,9 +175,10 @@ export default function ProductsPage() {
             `}
           >
             <div>
-              <h1 className="text-3xl font-bold tracking-tight">Products</h1>
+              <h1 className="text-3xl font-bold tracking-tight">Productos</h1>
               <p className="mt-1 text-lg text-muted-foreground">
-                Browse our latest products and find something you&apos;ll love.
+                Descubre nuestros productos más recientes y encuentra el ideal
+                para ti.
               </p>
             </div>
 
@@ -224,7 +225,7 @@ export default function ProductsPage() {
           {filteredProducts.length === 0 && (
             <div className="mt-8 text-center">
               <p className="text-muted-foreground">
-                No products found in this category.
+                No hay productos en esta categoría.
               </p>
             </div>
           )}
@@ -235,13 +236,13 @@ export default function ProductsPage() {
             className="mt-12 flex items-center justify-center gap-2"
           >
             <Button disabled variant="outline">
-              Previous
+              Anterior
             </Button>
             <Button aria-current="page" variant="default">
               1
             </Button>
             <Button disabled variant="outline">
-              Next
+              Siguiente
             </Button>
           </nav>
         </div>
