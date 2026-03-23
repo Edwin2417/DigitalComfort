@@ -5,7 +5,7 @@ import type { Notification } from "./notification-center";
 export const mockNotifications: Notification[] = [
   {
     description:
-      "Gracias por registrarte. Descubre los mejores gadgets y ofertas exclusivas.",
+      "Gracias por registrarte. Explora los mejores vehículos y ofertas exclusivas.",
     id: "1",
     read: false,
     timestamp: new Date(Date.now() - 60 * 1000),
@@ -13,32 +13,34 @@ export const mockNotifications: Notification[] = [
     type: "success",
   },
   {
-    description: "Hubo un problema con tu método de pago. Intenta nuevamente.",
+    description:
+      "Hubo un problema con tu solicitud de financiamiento. Intenta nuevamente.",
     id: "2",
     read: false,
     timestamp: new Date(Date.now() - 5 * 60 * 1000),
-    title: "Pago rechazado",
+    title: "Financiamiento rechazado",
     type: "error",
   },
   {
-    description: "Tu pedido #1234 fue enviado y está en camino.",
+    description:
+      "Tu solicitud para el vehículo #1234 fue procesada y está en revisión.",
     id: "3",
     read: false,
     timestamp: new Date(Date.now() - 3600 * 1000),
-    title: "Pedido enviado",
+    title: "Solicitud enviada",
     type: "info",
   },
   {
-    description: "Los audífonos inalámbricos que querías ya están disponibles.",
+    description: "El vehículo que te interesaba ya está disponible nuevamente.",
     id: "4",
     read: true,
     timestamp: new Date(Date.now() - 3600 * 1000),
-    title: "Producto nuevamente disponible",
+    title: "Vehículo disponible",
     type: "info",
   },
   {
     description:
-      "Aprovecha 10% de descuento en relojes inteligentes por tiempo limitado.",
+      "Aprovecha un 10% de descuento en SUVs seleccionadas por tiempo limitado.",
     id: "5",
     read: true,
     timestamp: new Date(Date.now() - 2 * 86400 * 1000),

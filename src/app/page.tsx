@@ -18,25 +18,22 @@ import { categories, featuredProductsHomepage } from "./mocks";
 const featuresWhyChooseUs = [
   {
     description:
-      "Envío gratuito en compras mayores a RD$5000. Entrega rápida y segura hasta tu puerta.",
+      "Recibe tu vehículo en tiempo récord en cualquier parte del país.",
     icon: <Truck className="h-6 w-6 text-primary" />,
-    title: "Envío Gratis",
+    title: "Entrega Rápida",
   },
   {
-    description:
-      "Tu información de pago está siempre protegida. Utilizamos tecnología de encriptación avanzada.",
+    description: "Opciones de pago flexibles adaptadas a tu presupuesto.",
     icon: <ShoppingBag className="h-6 w-6 text-primary" />,
-    title: "Pago Seguro",
+    title: "Financiamiento Disponible",
   },
   {
-    description:
-      "Nuestro equipo de atención al cliente está disponible en todo momento para ayudarte.",
+    description: "Asesoría personalizada en todo momento.",
     icon: <Clock className="h-6 w-6 text-primary" />,
     title: "Soporte 24/7",
   },
   {
-    description:
-      "Respaldamos cada producto con garantía y política de devolución de 30 días.",
+    description: "Vehículos revisados y certificados.",
     icon: <Star className="h-6 w-6 text-primary" />,
     title: "Garantía de Calidad",
   },
@@ -92,14 +89,14 @@ export default function HomePage() {
                       lg:leading-[1.1]
                     `}
                   >
-                    Potencia tu{" "}
+                    Encuentra tu{" "}
                     <span
                       className={`
                         bg-gradient-to-r from-primary to-primary/70 bg-clip-text
                         text-transparent
                       `}
                     >
-                      Mundo Digital
+                      Vehículo Ideal
                     </span>
                   </h1>
                   <p
@@ -108,9 +105,8 @@ export default function HomePage() {
                       md:text-xl
                     `}
                   >
-                    Descubre productos tecnológicos premium a precios
-                    competitivos, con envíos rápidos y un servicio al cliente
-                    excepcional.
+                    Descubre autos nuevos y usados al mejor precio, con
+                    financiamiento flexible y entrega rápida en todo el país.
                   </p>
                 </div>
                 <div
@@ -126,7 +122,7 @@ export default function HomePage() {
                       `}
                       size="lg"
                     >
-                      Comprar Ahora <ArrowRight className="h-4 w-4" />
+                      Ver Vehículos <ArrowRight className="h-4 w-4" />
                     </Button>
                   </Link>
                   <Link href="/about">
@@ -135,7 +131,7 @@ export default function HomePage() {
                       size="lg"
                       variant="outline"
                     >
-                      Sobre Nosotros
+                      Explorar Ofertas
                     </Button>
                   </Link>
                 </div>
@@ -146,7 +142,7 @@ export default function HomePage() {
                 >
                   <div className="flex items-center gap-1.5">
                     <Truck className="h-5 w-5 text-primary/70" />
-                    <span>Envíos gratis en compras mayores a RD$5000</span>
+                    <span>Financiamiento Disponible</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <Clock className="h-5 w-5 text-primary/70" />
@@ -211,8 +207,8 @@ export default function HomePage() {
               </h2>
               <div className="mt-2 h-1 w-12 rounded-full bg-primary" />
               <p className="mt-4 max-w-2xl text-center text-muted-foreground">
-                Encuentra el dispositivo perfecto según tus necesidades en
-                nuestras colecciones seleccionadas
+                Encuentra el vehiculo perfecto según tus necesidades en nuestras
+                colecciones seleccionadas
               </p>
             </div>
             <div
@@ -286,7 +282,7 @@ export default function HomePage() {
                   md:text-4xl
                 `}
               >
-                Productos Destacados
+                Vehículos Destacados
               </h2>
               <div className="mt-2 h-1 w-12 rounded-full bg-primary" />
               <p className="mt-4 max-w-2xl text-center text-muted-foreground">
@@ -309,7 +305,7 @@ export default function HomePage() {
             <div className="mt-10 flex justify-center">
               <Link href="/products">
                 <Button className="group h-12 px-8" size="lg" variant="outline">
-                  Ver Todos los Productos
+                  Ver Todos los vehículos
                   <ArrowRight
                     className={`
                       ml-2 h-4 w-4 transition-transform duration-300
@@ -428,7 +424,7 @@ export default function HomePage() {
                     md:text-4xl
                   `}
                 >
-                  ¿Listo para Actualizar tu Tecnología?
+                  ¿Listo para encontrar tu próximo vehículo?
                 </h2>
                 <p
                   className={`
@@ -436,9 +432,8 @@ export default function HomePage() {
                     md:text-xl
                   `}
                 >
-                  Únete a miles de clientes satisfechos y disfruta de los
-                  mejores productos tecnológicos del mercado. Regístrate hoy y
-                  recibe ofertas exclusivas.
+                  Explora nuestras ofertas y encuentra el auto perfecto para ti.
+                  Financiamiento disponible.
                 </p>
                 <div
                   className={`
@@ -460,7 +455,7 @@ export default function HomePage() {
                       size="lg"
                       variant="outline"
                     >
-                      Explorar Productos
+                      Explorar vehículos
                     </Button>
                   </Link>
                 </div>

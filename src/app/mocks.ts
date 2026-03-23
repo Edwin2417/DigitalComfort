@@ -1,73 +1,70 @@
 export const featuredProductsHomepage = [
   {
-    category: "Audio",
+    category: "Sedán",
     id: "1",
     image:
-      "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=800&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1626072557464-90403d788e8d?w=800&auto=format&fit=crop&q=60",
     inStock: true,
-    name: "Audífonos Inalámbricos SONY",
-    originalPrice: 14500,
-    price: 11500,
-    rating: 4.5,
+    name: "Toyota Corolla 2020 • 45,000 km",
+    originalPrice: 1050000,
+    price: 950000,
+    rating: 4.7,
   },
   {
-    category: "Relojes Inteligentes",
+    category: "SUV",
     id: "2",
     image:
-      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1707070182914-fb69f596c98e?w=800&auto=format&fit=crop&q=60",
     inStock: true,
-    name: "Reloj Inteligente Serie 5",
-    originalPrice: 20500,
-    price: 17900,
-    rating: 4.2,
+    name: "Honda CR-V 2019 • 60,000 km",
+    price: 1250000,
+    rating: 4.8,
   },
   {
-    category: "Celulares",
-    id: "5",
+    category: "Camioneta",
+    id: "3",
     image:
-      "https://images.unsplash.com/photo-1560617544-b4f287789e24?w=800&auto=format&fit=crop&q=60",
-    inStock: true,
-    name: "Samsung S21+",
-    originalPrice: 17000,
-    price: 14900,
+      "https://images.unsplash.com/photo-1559416523-140ddc3d238c?w=800&auto=format&fit=crop&q=60",
+    inStock: false,
+    name: "Toyota Hilux 2021 • 30,000 km",
+    price: 1850000,
     rating: 4.9,
   },
   {
-    category: "Televisores",
-    id: "6",
+    category: "Deportivo",
+    id: "4",
     image:
-      "https://images.unsplash.com/photo-1567690187548-f07b1d7bf5a9?w=800&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1547744152-14d985cb937f?w=800&auto=format&fit=crop&q=60",
     inStock: true,
-    name: 'Smart TV 55" Ultra HD',
-    originalPrice: 52000,
-    price: 46900,
-    rating: 4.7,
+    name: "Ford Mustang 2022 • 15,000 km",
+    price: 2500000,
+    rating: 5,
   },
 ];
 // Categories for the shop by category section
 export const categories = [
   {
     image:
-      "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=800&auto=format&fit=crop&q=60",
-    name: "Audio",
+      "https://images.unsplash.com/photo-1626072557464-90403d788e8d?w=800&auto=format&fit=crop&q=60",
+    name: "Sedán",
     productCount: 1,
   },
   {
     image:
-      "https://images.unsplash.com/photo-1770195483917-b3bb444b7a29?w=800&auto=format&fit=crop&q=60",
-    name: "Accesorios",
+      "https://images.unsplash.com/photo-1707070182914-fb69f596c98e?w=800&auto=format&fit=crop&q=60",
+    name: "SUV",
     productCount: 1,
   },
   {
     image:
-      "https://images.unsplash.com/photo-1560617544-b4f287789e24?w=800&auto=format&fit=crop&q=60",
-    name: "Celulares",
+      "https://images.unsplash.com/photo-1559416523-140ddc3d238c?w=800&auto=format&fit=crop&q=60",
+    name: "Camionetas",
     productCount: 1,
   },
   {
     image:
-      "https://images.unsplash.com/photo-1567690187548-f07b1d7bf5a9?w=800&auto=format&fit=crop&q=60",
-    name: "Televisores",
+      "https://images.unsplash.com/photo-1547744152-14d985cb937f?w=800&auto=format&fit=crop&q=60",
+    name: "Deportivos",
     productCount: 1,
   },
 ];

@@ -83,7 +83,7 @@ export function SignInPageClient() {
           fill
           priority
           sizes="(max-width: 768px) 0vw, 50vw"
-          src="https://images.unsplash.com/photo-1719811059181-09032aef07b8?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3"
+          src="https://images.unsplash.com/photo-1760976396211-5546ce83a400?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         />
         <div
           className={`

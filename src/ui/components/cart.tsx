@@ -17,22 +17,13 @@ interface CartProps {
 
 const mockCart: CartItem[] = [
   {
-    category: "Audio",
+    category: "Sedán",
     id: "1",
     image:
-      "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=800&auto=format&fit=crop&q=60",
-    name: "Audífonos Inalámbricos SONY",
-    price: 11500,
+      "https://images.unsplash.com/photo-1626072557464-90403d788e8d?w=800&auto=format&fit=crop&q=60",
+    name: "Toyota Corolla 2020 • 45,000 km",
+    price: 950000,
     quantity: 1,
-  },
-  {
-    category: "Celulares",
-    id: "5",
-    image:
-      "https://images.unsplash.com/photo-1560617544-b4f287789e24?w=800&auto=format&fit=crop&q=60",
-    name: "Samsung S21+",
-    price: 14900,
-    quantity: 2,
   },
 ];
 

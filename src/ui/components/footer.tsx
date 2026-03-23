@@ -1,4 +1,4 @@
-import { Facebook, Github, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
 
 import { SEO_CONFIG } from "~/app";
@@ -21,6 +21,7 @@ export function Footer({ className }: { className?: string }) {
             md:grid-cols-4
           `}
         >
+          {/* LOGO + DESCRIPCIÓN */}
           <div className="space-y-4">
             <Link className="flex items-center gap-2" href="/">
               <span
@@ -32,10 +33,12 @@ export function Footer({ className }: { className?: string }) {
                 {SEO_CONFIG.name}
               </span>
             </Link>
+
             <p className="text-sm text-muted-foreground">
-              Tu tienda integral de tecnología. Productos premium a precios
-              competitivos.
+              Tu plataforma confiable de vehículos. Autos nuevos y usados al
+              mejor precio con financiamiento disponible.
             </p>
+
             <div className="flex space-x-4">
               <Button
                 className="h-8 w-8 rounded-full"
@@ -43,7 +46,6 @@ export function Footer({ className }: { className?: string }) {
                 variant="ghost"
               >
                 <Facebook className="h-4 w-4" />
-                <span className="sr-only">Facebook</span>
               </Button>
               <Button
                 className="h-8 w-8 rounded-full"
@@ -51,7 +53,6 @@ export function Footer({ className }: { className?: string }) {
                 variant="ghost"
               >
                 <Twitter className="h-4 w-4" />
-                <span className="sr-only">Twitter</span>
               </Button>
               <Button
                 className="h-8 w-8 rounded-full"
@@ -59,15 +60,6 @@ export function Footer({ className }: { className?: string }) {
                 variant="ghost"
               >
                 <Instagram className="h-4 w-4" />
-                <span className="sr-only">Instagram</span>
-              </Button>
-              <Button
-                className="h-8 w-8 rounded-full"
-                size="icon"
-                variant="ghost"
-              >
-                <Github className="h-4 w-4" />
-                <span className="sr-only">GitHub</span>
               </Button>
               <Button
                 className="h-8 w-8 rounded-full"
@@ -75,12 +67,13 @@ export function Footer({ className }: { className?: string }) {
                 variant="ghost"
               >
                 <Linkedin className="h-4 w-4" />
-                <span className="sr-only">LinkedIn</span>
               </Button>
             </div>
           </div>
+
+          {/* VEHÍCULOS */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold">Tienda</h3>
+            <h3 className="mb-4 text-sm font-semibold">Vehículos</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
@@ -88,9 +81,9 @@ export function Footer({ className }: { className?: string }) {
                     text-muted-foreground
                     hover:text-foreground
                   `}
-                  href="/products"
+                  href="/vehicles"
                 >
-                  Todos los Productos
+                  Todos los Vehículos
                 </Link>
               </li>
               <li>
@@ -99,9 +92,9 @@ export function Footer({ className }: { className?: string }) {
                     text-muted-foreground
                     hover:text-foreground
                   `}
-                  href="/products?category=audio"
+                  href="/vehicles?category=suv"
                 >
-                  Audio
+                  SUV
                 </Link>
               </li>
               <li>
@@ -110,9 +103,9 @@ export function Footer({ className }: { className?: string }) {
                     text-muted-foreground
                     hover:text-foreground
                   `}
-                  href="/products?category=wearables"
+                  href="/vehicles?category=sedan"
                 >
-                  Dispositivos Inteligentes
+                  Sedán
                 </Link>
               </li>
               <li>
@@ -121,9 +114,9 @@ export function Footer({ className }: { className?: string }) {
                     text-muted-foreground
                     hover:text-foreground
                   `}
-                  href="/products?category=smartphones"
+                  href="/vehicles?category=pickup"
                 >
-                  Celulares
+                  Camionetas
                 </Link>
               </li>
               <li>
@@ -132,13 +125,15 @@ export function Footer({ className }: { className?: string }) {
                     text-muted-foreground
                     hover:text-foreground
                   `}
-                  href="/products?category=laptops"
+                  href="/vehicles?category=sport"
                 >
-                  Laptops
+                  Deportivos
                 </Link>
               </li>
             </ul>
           </div>
+
+          {/* EMPRESA */}
           <div>
             <h3 className="mb-4 text-sm font-semibold">Empresa</h3>
             <ul className="space-y-2 text-sm">
@@ -159,9 +154,20 @@ export function Footer({ className }: { className?: string }) {
                     text-muted-foreground
                     hover:text-foreground
                   `}
-                  href="/careers"
+                  href="/sell"
                 >
-                  Trabaja con Nosotros
+                  Vender tu Vehículo
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={`
+                    text-muted-foreground
+                    hover:text-foreground
+                  `}
+                  href="/financing"
+                >
+                  Financiamiento
                 </Link>
               </li>
               <li>
@@ -172,18 +178,7 @@ export function Footer({ className }: { className?: string }) {
                   `}
                   href="/blog"
                 >
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className={`
-                    text-muted-foreground
-                    hover:text-foreground
-                  `}
-                  href="/press"
-                >
-                  Prensa
+                  Blog Automotriz
                 </Link>
               </li>
               <li>
@@ -199,6 +194,8 @@ export function Footer({ className }: { className?: string }) {
               </li>
             </ul>
           </div>
+
+          {/* SOPORTE */}
           <div>
             <h3 className="mb-4 text-sm font-semibold">Soporte</h3>
             <ul className="space-y-2 text-sm">
@@ -219,9 +216,9 @@ export function Footer({ className }: { className?: string }) {
                     text-muted-foreground
                     hover:text-foreground
                   `}
-                  href="/shipping"
+                  href="/inspection"
                 >
-                  Envíos y Devoluciones
+                  Inspección de Vehículos
                 </Link>
               </li>
               <li>
@@ -260,6 +257,8 @@ export function Footer({ className }: { className?: string }) {
             </ul>
           </div>
         </div>
+
+        {/* BOTTOM */}
         <div className="mt-12 border-t pt-8">
           <div
             className={`
@@ -271,10 +270,9 @@ export function Footer({ className }: { className?: string }) {
               &copy; {new Date().getFullYear()} {SEO_CONFIG.name}. Todos los
               derechos reservados.
             </p>
+
             <div
-              className={
-                "flex items-center gap-4 text-sm text-muted-foreground"
-              }
+              className={`flex items-center gap-4 text-sm text-muted-foreground`}
             >
               <Link className="hover:text-foreground" href="/privacy">
                 Privacidad

@@ -18,19 +18,19 @@ export default function AboutPage() {
           >
             <div className="space-y-6">
               <h1 className="text-5xl font-bold tracking-tight">
-                Sobre DigitalComfort
+                Sobre MotorHub
               </h1>
-              <br />
+
               <p className="text-justify text-xl text-muted-foreground">
-                En DigitalComfort creemos que la tecnología no solo debe ser
-                moderna, sino útil, accesible y capaz de mejorar tu día a día.
-                Ofrecemos productos seleccionados con altos estándares de
-                calidad para brindarte comodidad, rendimiento y confianza en
-                cada compra.
+                En MotorHub creemos que comprar un vehículo debe ser una
+                experiencia simple, segura y transparente. Conectamos personas
+                con autos de calidad, ofreciendo opciones accesibles que se
+                adaptan a cada necesidad y presupuesto.
               </p>
-              <Link href="/products">
+
+              <Link href="/vehicles">
                 <Button className="px-8" size="lg">
-                  Explorar Productos
+                  Explorar Vehículos
                 </Button>
               </Link>
             </div>
@@ -43,10 +43,10 @@ export default function AboutPage() {
               `}
             >
               <Image
-                alt="DigitalComfort"
+                alt="Vehículos MotorHub"
                 className="object-cover"
                 fill
-                src="https://images.unsplash.com/photo-1624767735494-1929dc24ad43?w=800&auto=format&fit=crop&q=60"
+                src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&auto=format&fit=crop&q=60"
               />
             </div>
           </div>
@@ -57,24 +57,23 @@ export default function AboutPage() {
       <section className="border-t bg-card py-20">
         <div className="container mx-auto max-w-4xl space-y-6 px-4">
           <h2 className="text-3xl font-bold">¿Quiénes Somos?</h2>
+
           <p className="text-justify leading-relaxed text-muted-foreground">
-            Somos una tienda especializada en tecnología enfocada en ofrecer
-            soluciones prácticas y modernas para el hogar, el trabajo y el
-            entretenimiento. Comercializamos audífonos, relojes inteligentes,
-            celulares, televisores y accesorios tecnológicos cuidadosamente
-            seleccionados.
+            Somos un marketplace especializado en la compra y venta de vehículos
+            nuevos y usados. Ofrecemos una amplia variedad de opciones como
+            SUVs, sedanes, camionetas y vehículos deportivos, cuidadosamente
+            seleccionados para garantizar calidad y confianza.
           </p>
 
           <p className="text-justify leading-relaxed text-muted-foreground">
-            Nos distinguimos por nuestra atención personalizada, procesos de
-            compra seguros y un servicio postventa responsable. Nuestro equipo
-            está comprometido en asesorar a cada cliente para que encuentre el
-            producto ideal según sus necesidades y presupuesto.
+            Nos enfocamos en brindar una experiencia de compra segura, con
+            procesos transparentes y acompañamiento en cada paso, incluyendo
+            asesoría, financiamiento y verificación de vehículos.
           </p>
 
           <p className="text-justify leading-relaxed text-muted-foreground">
-            En DigitalComfort no solo vendemos tecnología, construimos
-            relaciones de confianza a largo plazo.
+            En MotorHub no solo vendemos vehículos, ayudamos a las personas a
+            encontrar el auto ideal para su estilo de vida.
           </p>
         </div>
       </section>
@@ -87,89 +86,61 @@ export default function AboutPage() {
             md:grid-cols-3
           `}
         >
+          {/* MISIÓN */}
           <Card className="shadow-lg">
             <CardHeader>
               <CardTitle>Misión</CardTitle>
             </CardHeader>
-            <CardContent
-              className={`
-                space-y-3 text-justify leading-relaxed text-muted-foreground
-              `}
-            >
-              <p>
-                Ofrecer productos tecnológicos innovadores y de alta calidad que
-                aporten comodidad, eficiencia y conectividad a la vida diaria de
-                nuestros clientes.
-              </p>
-              <p>
-                Garantizamos precios competitivos, procesos de compra seguros y
-                un servicio excepcional que genere confianza y satisfacción en
-                cada experiencia.
-              </p>
+            <CardContent className="text-justify text-muted-foreground">
+              Facilitar la compra y venta de vehículos de forma segura, rápida y
+              accesible, ofreciendo opciones confiables, asesoría personalizada
+              y soluciones de financiamiento que se adapten a cada cliente.
             </CardContent>
           </Card>
 
+          {/* VISIÓN */}
           <Card className="shadow-lg">
             <CardHeader>
               <CardTitle>Visión</CardTitle>
             </CardHeader>
-            <CardContent
-              className={`
-                space-y-3 text-justify leading-relaxed text-muted-foreground
-              `}
-            >
-              <p>
-                Ser la tienda tecnológica de referencia en República Dominicana,
-                reconocida por la excelencia en el servicio, la innovación
-                constante y la confianza que inspiramos en nuestros clientes.
-              </p>
-              <p>
-                Aspiramos a expandir nuestra presencia digital y consolidarnos
-                como una marca líder en soluciones tecnológicas accesibles.
-              </p>
+            <CardContent className="text-justify text-muted-foreground">
+              Ser la plataforma líder en la compra y venta de vehículos en
+              República Dominicana, destacándonos por la confianza, la
+              innovación digital y la excelencia en la experiencia del cliente.
             </CardContent>
           </Card>
 
+          {/* VALORES */}
           <Card className="shadow-lg">
             <CardHeader>
               <CardTitle>Valores</CardTitle>
             </CardHeader>
 
-            <CardContent className="text-justify">
+            <CardContent>
               <ul className="space-y-3">
                 <li className="flex items-center gap-3">
                   <span className="h-2 w-2 rounded-full bg-primary" />
-                  <span className="font-medium text-foreground">
-                    Innovación Constante
-                  </span>
+                  <span className="font-medium">Transparencia</span>
                 </li>
 
                 <li className="flex items-center gap-3">
                   <span className="h-2 w-2 rounded-full bg-primary" />
-                  <span className="font-medium text-foreground">
-                    Compromiso con la Calidad
-                  </span>
+                  <span className="font-medium">Confianza</span>
                 </li>
 
                 <li className="flex items-center gap-3">
                   <span className="h-2 w-2 rounded-full bg-primary" />
-                  <span className="font-medium text-foreground">
-                    Transparencia y Confianza
-                  </span>
+                  <span className="font-medium">Calidad</span>
                 </li>
 
                 <li className="flex items-center gap-3">
                   <span className="h-2 w-2 rounded-full bg-primary" />
-                  <span className="font-medium text-foreground">
-                    Orientación al Cliente
-                  </span>
+                  <span className="font-medium">Innovación</span>
                 </li>
 
                 <li className="flex items-center gap-3">
                   <span className="h-2 w-2 rounded-full bg-primary" />
-                  <span className="font-medium text-foreground">
-                    Responsabilidad y Ética Profesional
-                  </span>
+                  <span className="font-medium">Compromiso</span>
                 </li>
               </ul>
             </CardContent>

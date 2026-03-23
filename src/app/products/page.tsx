@@ -2,8 +2,7 @@
 
 import * as React from "react";
 
-import { useCart } from "~/lib/hooks/use-cart";
-import { ProductCard } from "~/ui/components/product-card";
+import { ProductCard } from "~/ui/components/product-card"; // 👈 volvemos a este
 import { Button } from "~/ui/primitives/button";
 
 /* -------------------------------------------------------------------------- */
@@ -24,85 +23,50 @@ interface Product {
 }
 
 /* -------------------------------------------------------------------------- */
-/*                            Helpers / utilities                             */
-/* -------------------------------------------------------------------------- */
-
-const slugify = (str: string) =>
-  str
-    .toLowerCase()
-    .replace(/\s+/g, "-")
-    .replace(/[^\w-]+/g, "");
-
-/* -------------------------------------------------------------------------- */
 /*                               Mock data                                    */
 /* -------------------------------------------------------------------------- */
 
 const products: Product[] = [
   {
-    category: "Audio",
+    category: "Sedán",
     id: "1",
     image:
-      "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1626072557464-90403d788e8d?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     inStock: true,
-    name: "Audífonos Inalámbricos SONY",
-    originalPrice: 14500,
-    price: 11500,
-    rating: 4.5,
+    name: "Toyota Corolla 2020 • 45,000 km",
+    originalPrice: 1050000,
+    price: 950000,
+    rating: 4.7,
   },
   {
-    category: "Relojes Inteligentes",
+    category: "SUV",
     id: "2",
     image:
-      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1707070182914-fb69f596c98e?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     inStock: true,
-    name: "Reloj Inteligente Serie 5",
-    originalPrice: 20500,
-    price: 17900,
-    rating: 4.2,
-  },
-  {
-    category: "Fotografía",
-    id: "3",
-    image:
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    inStock: false,
-    name: "Kit de Cámara Profesional",
-    originalPrice: 87000,
-    price: 79000,
+    name: "Honda CR-V 2019 • 60,000 km",
+    price: 1250000,
     rating: 4.8,
   },
   {
-    category: "Accesorios",
-    id: "4",
+    category: "Camioneta",
+    id: "3",
     image:
-      "https://images.unsplash.com/photo-1770195483917-b3bb444b7a29?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    inStock: true,
-    name: "Silla Gamer Ergonómica",
-    originalPrice: 18000,
-    price: 14900,
-    rating: 4.6,
-  },
-  {
-    category: "Celulares",
-    id: "5",
-    image:
-      "https://images.unsplash.com/photo-1560617544-b4f287789e24?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-    inStock: true,
-    name: "Samsung S21 +",
-    originalPrice: 17000,
-    price: 14900,
+      "https://images.unsplash.com/photo-1559416523-140ddc3d238c?q=80&w=1151&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    inStock: false,
+    name: "Toyota Hilux 2021 • 30,000 km",
+    price: 1850000,
     rating: 4.9,
   },
   {
-    category: "Televisores",
-    id: "6",
+    category: "Deportivo",
+    id: "4",
     image:
-      "https://images.unsplash.com/photo-1567690187548-f07b1d7bf5a9?q=80&w=736&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     inStock: true,
-    name: 'Smart TV 55" Ultra HD',
-    originalPrice: 52000,
-    price: 46900,
-    rating: 4.7,
+    name: "Ford Mustang 2022 • 15,000 km",
+    price: 2500000,
+    rating: 5,
   },
 ];
 
@@ -110,20 +74,15 @@ const products: Product[] = [
 /*                              Component                                     */
 /* -------------------------------------------------------------------------- */
 
-export default function ProductsPage() {
-  const { addItem } = useCart();
-
-  /* ----------------------- Categories (derived) ------------------------- */
+export default function VehiclesPage() {
   const categories: Category[] = React.useMemo(() => {
     const dynamic = Array.from(new Set(products.map((p) => p.category))).sort();
     return ["Todos", ...dynamic];
   }, []);
 
-  /* ----------------------------- State ---------------------------------- */
   const [selectedCategory, setSelectedCategory] =
     React.useState<Category>("Todos");
 
-  /* --------------------- Filtered products (memo) ----------------------- */
   const filteredProducts = React.useMemo(
     () =>
       selectedCategory === "Todos"
@@ -132,32 +91,6 @@ export default function ProductsPage() {
     [selectedCategory],
   );
 
-  /* --------------------------- Handlers --------------------------------- */
-  const handleAddToCart = React.useCallback(
-    (productId: string) => {
-      const product = products.find((p) => p.id === productId);
-      if (product) {
-        addItem(
-          {
-            category: product.category,
-            id: product.id,
-            image: product.image,
-            name: product.name,
-            price: product.price,
-          },
-          1, // (quantity) always adds 1 item to the cart
-        );
-      }
-    },
-    [addItem],
-  );
-
-  const handleAddToWishlist = React.useCallback((productId: string) => {
-    // TODO: integrate with Wishlist feature
-    console.log(`Added ${productId} to wishlist`);
-  }, []);
-
-  /* ----------------------------- Render --------------------------------- */
   return (
     <div className="flex min-h-screen flex-col">
       <main className="flex-1 py-10">
@@ -167,7 +100,7 @@ export default function ProductsPage() {
             md:px-6
           `}
         >
-          {/* Heading & filters */}
+          {/* HEADER */}
           <div
             className={`
               mb-8 flex flex-col gap-4
@@ -175,23 +108,21 @@ export default function ProductsPage() {
             `}
           >
             <div>
-              <h1 className="text-3xl font-bold tracking-tight">Productos</h1>
+              <h1 className="text-3xl font-bold tracking-tight">Vehículos</h1>
               <p className="mt-1 text-lg text-muted-foreground">
-                Descubre nuestros productos más recientes y encuentra el ideal
-                para ti.
+                Encuentra el vehículo ideal según tu presupuesto y estilo de
+                vida.
               </p>
             </div>
 
-            {/* Category pills */}
+            {/* FILTROS */}
             <div className="flex flex-wrap gap-2">
               {categories.map((category) => (
                 <Button
-                  aria-pressed={category === selectedCategory}
                   className="rounded-full"
-                  key={slugify(category)}
+                  key={category}
                   onClick={() => setSelectedCategory(category)}
                   size="sm"
-                  title={`Filter by ${category}`}
                   variant={
                     category === selectedCategory ? "default" : "outline"
                   }
@@ -202,7 +133,7 @@ export default function ProductsPage() {
             </div>
           </div>
 
-          {/* Product grid */}
+          {/* GRID */}
           <div
             className={`
               grid grid-cols-1 gap-6
@@ -212,39 +143,29 @@ export default function ProductsPage() {
             `}
           >
             {filteredProducts.map((product) => (
-              <ProductCard
-                key={product.id}
-                onAddToCart={handleAddToCart}
-                onAddToWishlist={handleAddToWishlist}
-                product={product}
-              />
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
 
-          {/* Empty state */}
+          {/* EMPTY */}
           {filteredProducts.length === 0 && (
             <div className="mt-8 text-center">
               <p className="text-muted-foreground">
-                No hay productos en esta categoría.
+                No hay vehículos en esta categoría.
               </p>
             </div>
           )}
 
-          {/* Pagination */}
-          <nav
-            aria-label="Pagination"
-            className="mt-12 flex items-center justify-center gap-2"
-          >
+          {/* PAGINACIÓN */}
+          <div className="mt-12 flex justify-center gap-2">
             <Button disabled variant="outline">
               Anterior
             </Button>
-            <Button aria-current="page" variant="default">
-              1
-            </Button>
+            <Button variant="default">1</Button>
             <Button disabled variant="outline">
               Siguiente
             </Button>
-          </nav>
+          </div>
         </div>
       </main>
     </div>
